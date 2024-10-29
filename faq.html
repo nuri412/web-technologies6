@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="display">
+        <header class="header">
+
+        
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Apple store</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="practice2.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                      </li>
+                      
+                      </li>
+                      <li class="nav-item"></li>
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                      </li>
+                      
+                      
+                    
+                    </ul>
+                    
+                    </form>
+                  </div>
+                </div>
+              </nav>
+            <h1>Airpods Max</h1>
+        </header>
+        
+    
+        <main class="main">
+            <div class="faq">
+                <h3 onclick="toggleAnswer('faq1')">Who are we?</h3>
+                <p id="faq1" class="answer" style="display:none;">We are an Apple company and our product is one of the most popular products in the world</p>
+              
+                <h3 onclick="toggleAnswer('faq2')">Why is our product unique?</h3>
+                <p id="faq2" class="answer" style="display:none;">We are an Apple company and we have created a unique collection of headphones that not only delight with their great sound, but also complement the wardrobe and add charm to the style.</p>
+              </div>
+              
+              <script>
+                function toggleAnswer(id) {
+                  const answer = document.getElementById(id);
+                  if (answer.style.display === "none") {
+                    answer.style.display = "block";
+                  } else {
+                    answer.style.display = "none";
+                  }
+                }
+              </script>
+              
+
+              
+
+              <button onclick="openForm()">Subscribe</button>
+
+              <div id="popupForm" class="popup" style="display:none;">
+                <div class="form-popup">
+                  <form id="subscribeForm" class="form-container">
+                    <h2>Subscribe to our newsletter</h2>
+                    <label for="email">Email:</label>
+                    <input type="email" id="emailPopup" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                  </form>
+                </div>
+              </div>
+              
+              
+              
+              <script>
+                function openForm() {
+                  document.getElementById("popupForm").style.display = "flex";
+                }
+              
+                function closeForm() {
+                  document.getElementById("popupForm").style.display = "none";
+                }
+              
+                document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+                  const email = document.getElementById('emailPopup').value;
+                  if (!email.includes('@')) {
+                    alert('Please enter a valid email address.');
+                    event.preventDefault();
+                  } else {
+                    alert('Subscription successful!');
+                  }
+                });
+              </script>
+              
+              
+              
+              
+              
+            
+        </main>
+        
+        <footer class="footer">Nurila Smaiyl  10.09.2024  @letsgonuri</footer>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</body>
+</html>

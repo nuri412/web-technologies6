@@ -1,0 +1,349 @@
+body{
+    margin: 0px;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+h1{
+    text-align: center;
+}
+
+.airpods-max{
+    height: 486px;
+    width: 438px;
+}
+
+figure{
+    position: absolute;
+    left:857px;
+    
+}
+
+.headphones-text{
+    position: absolute;
+    left: 155px;
+    right: 824px;
+    top: 395px;
+    bottom: 402px;
+}
+
+.buy-btn{
+    
+    position: absolute;
+    width: 283px;
+    height: 55px;
+    left: 244px;
+    right: 913px;
+    top: 520px;
+    bottom: 274px;
+    
+}
+
+
+.main{
+    padding-bottom: 50px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+
+/* practice2 */
+
+
+.card-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:block;
+}
+
+.card-image > img {
+        
+    object-fit: contain;
+    transition: 0.2s;
+    width: 70%;
+    height: auto;
+}
+
+.card-image:hover > img {
+    transform: scale(1.1);
+}
+
+
+
+.card:hover {
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Увеличиваем карточку при наведении */
+    transition: 0.3s ease-in-out;
+}
+
+
+.card-top{
+    flex: 0 0 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-label{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 4px 8px;
+    background-color: lightblue;
+    color: #333;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+.card-bottom {
+    flex: 1 0 auto;
+}
+
+
+.card-prices {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.card-price {
+    display: flex;
+    gap: 10px; 
+    align-items: center; 
+}
+
+.card-price--discount, .card-price--common {
+    font-weight: 700;
+    font-size: 19px;
+    color: #414141;
+}
+
+.card-price--discount-text, .card-price--common-text {
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+}
+
+  
+  .card-title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: #414141;
+  }
+  
+  .card-title:hover {
+    color: #ff6633;
+  }
+  
+  .card-add {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 17px;
+    color: #70c05b;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #70c05b;
+    border-radius: 4px;
+    cursor: pointer; 
+    transition: 0.2s;
+    margin-top: auto; 
+  }
+  
+  .card-add:hover {
+    border: 1px solid #ff6633;
+    background-color: #ff6633;
+    color: #fff;
+  }
+
+
+
+
+  .practice2body{
+    background: #bfbfbf;
+  }
+
+  #productContainer .card {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card-img-top {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.card {
+    width: 100%;
+    max-width: 225px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+
+
+
+
+  /* practice 5*/
+
+/* Светлая тема */
+.navbar .btn-outline-light {
+    border: none;
+}
+
+#themeIcon {
+    color: black;
+}
+
+.btn-outline-light:focus,
+.btn-outline-light:hover {
+    outline: none;
+    box-shadow: none; 
+}
+
+/* Темная тема */
+
+.navbar .btn-outline-light {
+    border: none;
+    background-color: transparent !important;
+}
+
+#themeIcon {
+    color: black;
+}
+
+.btn-outline-light:focus,
+.btn-outline-light:hover {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode .navbar {
+    background-color: black !important;
+    border-color: black !important;
+}
+
+.dark-mode .navbar .nav-link,
+.dark-mode .navbar .navbar-brand {
+    color: white !important;
+}
+
+.dark-mode #themeIcon {
+    color: white;
+}
+
+.dark-mode .btn-outline-light {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+.dark-mode .btn-outline-light:focus,
+.dark-mode .btn-outline-light:hover {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-container .btn {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-container .btn-success {
+    background-color: green;
+    color: white;
+  }
+  
+  .form-container .btn.cancel {
+    background-color: red;
+    color: white;
+    margin-left: 10px;
+  }
+
+  .carousel-inner img {
+    max-height: 500px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black !important;
+}
+
+
+  
+
+
+
+
+
+ 
