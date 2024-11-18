@@ -37,33 +37,23 @@
         </header>
 
         <main class="main">
-            <div class="faq">
-                <h3 onclick="toggleAnswer('faq1')">Who are we?</h3>
-                <p id="faq1" class="answer" style="display:none;">We are an Apple company and our product is one of the most popular products in the world.</p>
-              
-                <h3 onclick="toggleAnswer('faq2')">Why is our product unique?</h3>
-                <p id="faq2" class="answer" style="display:none;">We have created a unique collection of headphones that delight with their great sound, complement the wardrobe, and add charm to the style.</p>
+            <div class="faq-item" onclick="toggleAnswer('answer1', this)">
+                <h3>Who are we? <i class="fas fa-chevron-down"></i></h3>
+                <p id="answer1" style="display: none;">We are an Apple company and our product is one of the most popular products in the world.</p>
             </div>
-
-            <button onclick="openForm()">Subscribe</button>
-
-            <div id="popupForm" class="popup" style="display:none;">
-                <div class="form-popup">
-                    <form id="subscribeForm" class="form-container">
-                        <h2>Subscribe to our newsletter</h2>
-                        <label for="email">Email:</label>
-                        <input type="email" id="emailPopup" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                    </form>
-                </div>
+            
+            <div class="faq-item" onclick="toggleAnswer('answer2', this)">
+                <h3>Why is our product unique? <i class="fas fa-chevron-down"></i></h3>
+                <p id="answer2" style="display: none;">We have created a unique collection of headphones that delight with their great sound, complement the wardrobe, and add charm to the style</p>
             </div>
+            
+            
         </main>
 
         <footer class="footer">Nurila Smaiyl  10.09.2024  @letsgonuri</footer>
     </div>
 
-    <!-- Login Modal -->
+   <!-- логин -->
     <div id="loginModal" class="modal" tabindex="-1" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -78,95 +68,48 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="login()">Log In</button>
                 </div>
+                <div class="text-center">
+                    <p>Don't have an account? <a href="#" onclick="openSignUpModal()">Sign Up</a></p>
+                </div>
+                
+                
             </div>
         </div>
     </div>
 
+    <div id="signUpModal" class="modal" tabindex="-1" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sign Up</h5>
+                    <button type="button" class="btn-close" onclick="closeModal()"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="signUpName" class="form-control" placeholder="Enter Name" required>
+                    <input type="email" id="signUpEmail" class="form-control mt-2" placeholder="Enter Email" required>
+                    <input type="password" id="signUpPassword" class="form-control mt-2" placeholder="Enter Password" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="signUp()">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2>Latest Apple News</h2>
+        <div id="newsContainer" class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- жаналыктар -->
+        </div>
+    </div>
+    
+    
+    
+    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script>
-        function toggleAnswer(id) {
-            const answer = document.getElementById(id);
-            answer.style.display = answer.style.display === "none" ? "block" : "none";
-        }
+    <script src="script.js"></script>
 
-        function openForm() {
-            document.getElementById("popupForm").style.display = "flex";
-        }
-
-        function closeForm() {
-            document.getElementById("popupForm").style.display = "none";
-        }
-
-        document.getElementById('subscribeForm').addEventListener('submit', function(event) {
-            const email = document.getElementById('emailPopup').value;
-            if (!email.includes('@')) {
-                alert('Please enter a valid email address.');
-                event.preventDefault();
-            } else {
-                alert('Subscription successful!');
-            }
-        });
-
-        // Login functionality
-        document.getElementById('userIcon').onclick = function() {
-            if (!localStorage.getItem('username')) {
-                document.getElementById('loginModal').style.display = 'flex';
-            } else {
-                toggleLogout();
-            }
-        };
-
-        function closeModal() {
-            document.getElementById('loginModal').style.display = 'none';
-        }
-
-        function login() {
-            const username = document.getElementById('usernameInput').value;
-            const password = document.getElementById('passwordInput').value;
-            if (username && password) {
-                localStorage.setItem('username', username);
-                updateUI();
-                closeModal();
-            } else {
-                alert('Please enter both username and password');
-            }
-        }
-
-        function updateUI() {
-            const username = localStorage.getItem('username');
-            document.getElementById('userStatus').textContent = username || 'Log In';
-        }
-
-        function toggleLogout() {
-            if (confirm('Do you want to log out?')) {
-                localStorage.removeItem('username');
-                updateUI();
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', updateUI);
-
-        // Theme toggle
-        const themeToggleBtn = document.getElementById('themeToggleBtn');
-        const themeIcon = document.getElementById('themeIcon');
-        
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-            localStorage.setItem('theme', theme);
-            themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-        }
-        
-        themeToggleBtn.addEventListener('click', toggleTheme);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-mode');
-                themeIcon.className = 'fas fa-moon';
-            }
-        });
-    </script>
 </body>
 </html>

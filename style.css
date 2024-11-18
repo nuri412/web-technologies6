@@ -339,6 +339,16 @@ figure{
     background-color: black !important;
 }
 
+.text-center {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.modal-footer .text-center {
+    margin-top: 15px;
+}
+
+
 
   
 
