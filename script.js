@@ -174,36 +174,35 @@ function toggleAnswer(id, element) {
 }
 
 const apiKey = '87e012e51bb34a3099d9a9bd01ff7a84';  
-const newsEndpoint = `https://newsapi.org/v2/everything?q=apple&language=en&sortBy=publishedAt&apiKey=${apiKey}`;
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const apiUrl = `https://newsapi.org/v2/everything?q=apple&language=en&sortBy=publishedAt&apiKey=${apiKey}`;
+const fullUrl = proxyUrl + apiUrl;
 
 async function fetchNews() {
     try {
-        const response = await fetch(newsEndpoint);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        const response = await fetch(fullUrl);
         const data = await response.json();
 
         if (data.articles && data.articles.length > 0) {
             displayNews(data.articles);
         } else {
-            console.error('No news articles found');
+            console.error('No news articles found.');
             document.getElementById('newsContainer').innerHTML = '<p>No news available at the moment.</p>';
         }
     } catch (error) {
         console.error('Error fetching news:', error);
-        document.getElementById('newsContainer').innerHTML = '<p>Error fetching news. Please try again later.</p>';
+        document.getElementById('newsContainer').innerHTML = '<p>Error loading news. Please try again later.</p>';
     }
 }
 
 function displayNews(articles) {
     const newsContainer = document.getElementById('newsContainer');
-    newsContainer.innerHTML = '';
+    newsContainer.innerHTML = ''; // Очищаем контейнер
 
     articles.forEach(article => {
         const newsCard = `
             <div class="col">
-                <div class="card h-100">
+                <div class="card">
                     <img src="${article.urlToImage || 'https://via.placeholder.com/150'}" class="card-img-top" alt="${article.title}">
                     <div class="card-body">
                         <h5 class="card-title">${article.title}</h5>
@@ -213,17 +212,9 @@ function displayNews(articles) {
                 </div>
             </div>
         `;
-
         newsContainer.innerHTML += newsCard;
     });
 }
 
+// Загружаем новости после загрузки страницы
 document.addEventListener('DOMContentLoaded', fetchNews);
-
-
-
-
-
-
-
-
