@@ -177,10 +177,10 @@ function searchProducts() {
     const query = document.getElementById('searchInput').value.toLowerCase();
     const productContainer = document.getElementById('productContainer');
     const products = [
-        { name: 'Airpods Max', price: '180,000 тг', img: 'https://www.apple.com/v/airpods-max/f/images/overview/hero__gnfk5g59t0qe_xlarge_2x.png', category: 'headphones', page: 'practice1.html' },
-        { name: 'iPhone 16 pro', price: '800,000 тг', img: 'https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/240909224113782339/240911100025627334.png', category: 'phones', page: 'iphone16pro.html' },
-        { name: 'Apple Watch', price: '150,000 тг', img: 'https://www.apple.com/v/watch/bo/images/overview/select/product_s10__deak4mdempoy_xlarge_2x.png', category: 'watches', page: 'applewatch.html' },
-        { name: 'iPhone 15 pro', price: '700,000 тг', img: 'https://api.technodom.kz/f3/api/v1/images/800/800/smartfon_gsm_apple_iphone_15_pro_128gb_81286148_natural_titanium_mtux3_274404_4.jpg', category: 'phones', page: 'iphone15pro.html' }
+        { name: 'Airpods Max', price: '180,000 тг', img: 'https://www.apple.com/v/airpods-max/f/images/overview/hero__gnfk5g59t0qe_xlarge_2x.png', category: 'headphones', page: './practice1.html' },
+        { name: 'iPhone 16 pro', price: '800,000 тг', img: 'https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/240909224113782339/240911100025627334.png', category: 'phones', page: './iphone16pro.html' },
+        { name: 'Apple Watch', price: '150,000 тг', img: 'https://www.apple.com/v/watch/bo/images/overview/select/product_s10__deak4mdempoy_xlarge_2x.png', category: 'watches', page: './applewatch.html' },
+        { name: 'iPhone 15 pro', price: '700,000 тг', img: 'https://api.technodom.kz/f3/api/v1/images/800/800/smartfon_gsm_apple_iphone_15_pro_128gb_81286148_natural_titanium_mtux3_274404_4.jpg', category: 'phones', page: './iphone15pro.html' }
     ];
 
     const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
