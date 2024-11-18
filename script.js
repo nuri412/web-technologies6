@@ -173,21 +173,45 @@ function toggleAnswer(id, element) {
     }
 }
 
+function searchProducts() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const productContainer = document.getElementById('productContainer');
+    const products = [
+        { name: 'Airpods Max', price: '180,000 тг', img: 'https://www.apple.com/v/airpods-max/f/images/overview/hero__gnfk5g59t0qe_xlarge_2x.png', category: 'headphones', page: 'practice1.html' },
+        { name: 'iPhone 16 pro', price: '800,000 тг', img: 'https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/240909224113782339/240911100025627334.png', category: 'phones', page: 'iphone16pro.html' },
+        { name: 'Apple Watch', price: '150,000 тг', img: 'https://www.apple.com/v/watch/bo/images/overview/select/product_s10__deak4mdempoy_xlarge_2x.png', category: 'watches', page: 'applewatch.html' },
+        { name: 'iPhone 15 pro', price: '700,000 тг', img: 'https://api.technodom.kz/f3/api/v1/images/800/800/smartfon_gsm_apple_iphone_15_pro_128gb_81286148_natural_titanium_mtux3_274404_4.jpg', category: 'phones', page: 'iphone15pro.html' }
+    ];
 
-let quote = document.getElementById("quote");
-let author = document.getElementById("author");
-let btn = document.getElementById("btn");
+    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
+    productContainer.innerHTML = '';
 
-const url = "https://api.quotable.io/random";
+    if (filteredProducts.length === 0) {
+        productContainer.innerHTML = `<p class="text-center">No products found</p>`;
+        return;
+    }
 
-let getQuote = () => {
-  fetch(url)
-    .then((data) => data.json())
-    .then((item) => {
-      quote.innerText = item.content;
-      author.innerText = item.author;
+    filteredProducts.forEach(product => {
+        const productElement = `
+            <div class="col">
+                <div class="card">
+                    <img src="${product.img}" class="card-img-top" alt="${product.name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                        <p class="card-text">${product.price}</p>
+                        <a class="btn btn-primary" href="${product.page}">Buy</a>
+                    </div>
+                </div>
+            </div>`;
+        productContainer.innerHTML += productElement;
     });
-};
+}
 
-window.addEventListener("load", getQuote);
-btn.addEventListener("click", getQuote);
+document.getElementById('searchButton').addEventListener('click', searchProducts);
+document.getElementById('searchInput').addEventListener('keyup', event => {
+    if (event.key === 'Enter') {
+        searchProducts();
+    }
+});
+
+

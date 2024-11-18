@@ -1,0 +1,163 @@
+.quotecontainer{
+    width: 700px;
+    height: auto;
+    border-radius: 30px;
+    background: linear-gradient(25deg, #525a65, #3b424c);
+    box-shadow: inset 2px -1px 1px 0 rgba(255, 255, 255, 0.2),
+                inset -3px 2px 5px 0 rgba(0, 0, 0, 0.2),
+                4px 1px 5px 0 rgba(0, 0, 0, 0.5), 
+                -1px -3px 5px 0 rgba(0, 0, 0, 0.5), 
+                4px -3px 10px 0 rgba(0, 0, 0, 0.5), 
+                -1px -1px 10px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.quotecontainer .header{
+    padding: 10px 25px;
+    border-bottom: 2px solid #838a8a;
+    font-size: 40px;
+    color: #88877e;
+}
+
+.quotecontainer .content{
+    padding: 20px 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.quotecontainer .content .middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200px;
+    color: #b0b0a0;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.quotecontainer .content .quote_area .quote{
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+    margin: 0 10px;
+    word-break: break-all;
+}
+
+.quotecontainer .content .quote_area .quote .left,
+.quotecontainer .content .quote_area .quote .right{
+    position: relative;
+    top: -14px;
+    color: #deddd8;
+}
+
+.quotecontainer .content .author{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 45px;
+    text-transform: uppercase;
+    color: #deddd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.author span:first-child{
+    letter-spacing: -12px;
+    margin-right: 15px;
+}
+
+.author span:last-child{
+    word-spacing: 8px;
+    font-size: 35px;
+}
+
+.fa-spin{
+    color: #ffffff;
+}
+
+
+.quotecontainer .quotefooter{
+    padding: 20px 25px;
+    border-top: 2px solid #838a8a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quotecontainer .quotefooter .icon{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.quotecontainer .quotefooter .icon div{
+    width: 45px;
+    height: 45px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.quotecontainer .quotefooter .icon div i{
+    color: #fff;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.quotecontainer .quotefooter .icon div:hover{
+    background-color: #fff !important;
+}
+
+.quotecontainer .quotefooter .icon div:hover i{
+    color: #000;
+}
+
+
+.quotecontainer .quotefooter .btn button{
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.quotecontainer .quotefooter .btn button:hover{
+    background: #9c9c9c;
+}
+
+
+
+
+.main {
+    padding-bottom: 100px; /
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+
+  
+
+
+
+
+
+ 
